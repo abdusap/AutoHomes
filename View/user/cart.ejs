@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.cwsthemes.com/ingenious/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:54:09 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Ingenious | Just another HTML Template | Shopping Cart</title>
+
+<!-- Stylesheets -->
+<link href="/Public/user/css/bootstrap.css" rel="stylesheet">
+<link href="/Public/user/css/style.css" rel="stylesheet">
+<link href="/Public/user/css/responsive.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="/Public/user/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="/Public/user/images/favicon.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+<%- include('../partials/user_header.ejs') %>
+
+  <!--Page Title-->
+  <section class="page-title">
+    <!-- Background Layers -->
+    <div class="background-layers">
+        <div class="cws-image-bg" style="background-image: url(/Public/user/images/background/37.jpg)">
+            <div class="cws-overlay-bg"></div>
+        </div>
+    </div>
+
+    <div class="auto-container">
+        <h1>Shopping Cart</h1>
+        <ul class="page-breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li>Shopping Cart</li>
+        </ul>
+    </div>
+</section>
+<!--End Page Title-->
+
+<!--Cart Section-->
+<section class="cart-section">
+    <div class="auto-container">
+        <!--Cart Outer-->
+        <div class="cart-outer">
+            <div class="table-outer">
+                <table class="cart-table">
+                    <thead class="cart-header">
+                        <tr>
+                            <th class="product-thumbnail">&nbsp;</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Total</th>
+                            <th class="product-remove">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart-item">
+                            <td class="product-thumbnail"><a href="shop-single.html"><img src="/Public/user/images/resource/item-thumb-1.jpg" alt=""></a></td>
+                            <td class="product-name"><a href="shop-single.html">Night Security Cam 2Z1</a></td>
+                            <td class="product-price">$84.00</td> 
+                            <td class="product-quantity"><div class="quantity"><label>Quantity</label><input type="number" class="qty" name="qty" value="1"> </div></td>
+                            <td class="product-subtotal"><span class="amount">$84.00</span></td>
+                            <td class="product-remove"> <a href="#" class="remove"><span class="fa fa-times"></span></a></td>
+                        </tr>
+
+                        <tr class="cart-item">
+                            <td class="product-thumbnail"><a href="shop-single.html"><img src="/Public/user/images/resource/item-thumb-2.jpg" alt=""></a></td>
+                            <td class="product-name"><a href="shop-single.html">Day Security Camera B2Z1</a></td>
+                            <td class="product-price">$15.00</td> 
+                            <td class="product-quantity"><div class="quantity"><label>Quantity</label><input type="number" class="qty" name="qty" value="1"> </div></td>
+                            <td class="product-subtotal"><span class="amount">$15.00</span></td>
+                            <td class="product-remove"> <button href="#" class="remove"><span class="fa fa-times" style="color: red;"></span></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-options clearfix">
+               
+
+                <div class="pull-right">
+                    <button type="button" class="theme-btn cart-btn">update cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="row justify-content-between">                    
+            <div class="column col-lg-4 offset-lg-8 col-md-6 col-sm-12">
+                <ul class="totals-table">
+                    <li><h3>Cart Totals</h3></li>
+                    <li class="clearfix"><span class="col">Subtotal</span><span class="col price">$186.00</span></li>
+                    <li class="clearfix"><span class="col">Total</span><span class="col total-price">$186.00</span></li>
+                    <li class="text-right"><button type="submit" class="theme-btn proceed-btn">Proceed to Checkout</button></li>
+                </ul>
+            </div>  
+        </div> -->
+
+          <!--Checkout Details-->
+          <div class="checkout-form">
+            <form method="post" action="http://html.cwsthemes.com/ingenious/checkout.html">
+                <div class="row clearfix">
+                    <!--Column-->
+                    <div class="column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h3>Details</h3>
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group">
+                                <div class="field-label">Name <sup>*</sup></div>
+                                <input type="text" name="field-name" value="" placeholder="Name">
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group">
+                                <div class="field-label">Email <sup>*</sup></div>
+                                <input type="email" name="field-name" value="" placeholder="Email">
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group">
+                                <div class="field-label">Mobile <sup>*</sup></div>
+                                <input type="number" name="field-name" value="" placeholder="Mobile">
+                            </div>
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Country <sup>*</sup></div>
+                                <select name="billing_country" class="select2 sortby-select" autocomplete="country">
+                                    <option value="">Select a country&hellip;</option>
+                                    <option value="AX" >&#197;land Islands</option>
+                                    <option value="AF" >Afghanistan</option>
+                                    <option value="AL" >Albania</option>
+                                    <option value="DZ" >Algeria</option>
+                                   
+                                </select>
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Street address <sup>*</sup></div>
+                                <input type="text" name="field-name" value="" placeholder="House number and street name">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="field-name" value="" placeholder="Apartment,suite,unit etc. (optional)">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Town / City <sup>*</sup></div>
+                                <input type="text" name="field-name" value="" placeholder="" required="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">State / County <sup>*</sup></div>
+                                <input type="text" name="field-name" value="" placeholder="" required="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Postcode/ ZIP <sup>*</sup></div>
+                                <input type="text" name="field-name" value="" placeholder="" required="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Phone</div>
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div> -->
+
+                            <!--Form Group-->
+                            <!-- <div class="form-group">
+                                <div class="field-label">Email Address</div>
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <!-- <div class="sec-title">
+                                <h3>Additional information</h3>
+                            </div> -->
+                            <div class="form-group ">
+                                <div class="field-label">Fill and submit the form </div>
+                                <textarea class="" readonly placeholder="We will contact as per your estimated product and service." ></textarea>
+                            </div>
+                        </div>
+                            <div class="column col-lg-4 offset-lg-8 col-md-6 col-sm-12">
+                                <!-- <ul class="totals-table"> -->
+                                    <!-- <li><h3>Cart Totals</h3></li> -->
+                                    <!-- <li class="clearfix"><span class="col">Subtotal</span><span class="col price">$186.00</span></li> -->
+                                    <!-- <li class="clearfix"><span class="col">Total</span><span class="col total-price">$186.00</span></li> -->
+                                    <li class="text-right"><button type="submit" class="theme-btn proceed-btn">Send</button></li>
+                                </ul>
+                            </div> 
+                            <!--Form Group-->
+                            <!-- <div class="form-group ">
+                                <div class="field-label">Order notes (optional)</div>
+                                <textarea class="" readonly placeholder="Sending " ></textarea>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--End Checkout Details-->
+
+    </div>
+</section>
+<!--End Cart Section-->
+<%- include('../partials/user_footer.ejs') %>
+
+
+</div><!-- End Page Wrapper -->
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-alt-up"></span></div>
+
+<script src="/Public/user/js/jquery.js"></script> 
+<script src="/Public/user/js/popper.min.js"></script>
+<script src="/Public/user/js/bootstrap.min.js"></script>
+<script src="/Public/user/js/jquery-ui.min.js"></script>
+<script src="/Public/user/js/jquery.fancybox.js"></script>
+<script src="/Public/user/js/owl.js"></script>
+<script src="/Public/user/js/wow.js"></script>
+<script src="/Public/user/js/appear.js"></script>
+<script src="/Public/user/js/jquery.fancybox.js"></script>
+<script src="/Public/user/js/select2.min.js"></script>
+<script src="/Public/user/js/sticky_sidebar.min.js"></script>
+<script src="/Public/user/js/isotope.js"></script>
+<script src="/Public/user/js/script.js"></script>
+</body>
+
+<!-- Mirrored from html.cwsthemes.com/ingenious/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:54:09 GMT -->
+</html>
