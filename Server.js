@@ -10,8 +10,7 @@ const userRouter = require('./Routes/userRoute');
 require('dotenv').config()
 
 // Database section
-// require('./config/connection')
-
+require('./Config/DB')
 
 //For not storing Cache
 app.use((req, res, next) => {
