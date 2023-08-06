@@ -77,21 +77,24 @@
             <h3> <%=name %></h3>
             <!-- <span class="cat">Energy</span> -->
             <div class="gallery-images row mid-spacing">
+                <%  for (let i=0; i < imageCount;i++){  %>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <figure class="image">
-                        <a href="/Public/user/images/gallery/single-img-4.jpg" class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/single-img-4.jpg" alt="" /></a>
+
+                        <a  class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/<%=name%>-<%=i+1%>.jpg" alt="" /></a>  
+                    </figure>
+                </div>
+                <% } %>
+                <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                    <figure class="image">
+                        <a href="/Public/user/images/gallery/single-img-5.jpg" class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/lighting control.jpg" alt="" /></a>
                     </figure>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <figure class="image">
-                        <a href="/Public/user/images/gallery/single-img-5.jpg" class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/single-img-5.jpg" alt="" /></a>
+                        <a href="Public/user/images/gallery/single-img-6.jpg" class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/home wifi.jpg" alt="" /></a>
                     </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <figure class="image">
-                        <a href="Public/user/images/gallery/single-img-6.jpg" class="lightbox-image" data-fancybox='single-img'><img src="/Public/user/images/gallery/single-img-6.jpg" alt="" /></a>
-                    </figure>
-                </div>
+                </div> -->
             </div>
             <p><%=description%></p>
             <!-- <p>Metus diam at nulla morbi justo pede, lorem malesuada venenatis vestibulum vivamus lorem, a amet feugiat est nisl, mattis vel, non id arcu non in lacus. Pharetra in, dui ut risus nec magna luctus. Urna adipiscing cras adipiscing, massa voluptas qui, sed cupiditate donec auctor cursus quam, maecenas amet dui cras lorem commodo, a lorem vestibulum id ipsum duis vitae.</p> -->
