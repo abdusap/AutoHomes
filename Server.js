@@ -1,6 +1,7 @@
 const express= require('express')
 const app=express()
 const ejs = require('ejs');
+const cookieParser = require('cookie-parser');
 // const session = require('express-session')
 const path=require('path');
 const userRouter = require('./Routes/userRoute');
@@ -31,6 +32,8 @@ app.use((req, res, next) => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+//  For parsing the cookeies
+app.use(cookieParser())
 
 // Port specified
 const port= process.env.PORT

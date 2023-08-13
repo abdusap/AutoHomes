@@ -2,7 +2,7 @@ let mongoose = require('mongoose')
 
 let cartSchema=new mongoose.Schema({
     userId : {
-        type: mongoose.Types.ObjectId,
+        type: String
     },
     cartItem : [{
         productName:{

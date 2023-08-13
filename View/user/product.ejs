@@ -4,7 +4,7 @@
 <!-- Mirrored from html.cwsthemes.com/ingenious/portfolio-two-col-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:52:52 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Ingenious | Just another HTML Template | TWO COLS + SIDEBAR</title>
+<title>AutoHoms-Home Automation Product and Services</title>
 
 <!-- Stylesheets -->
 <link href="/Public/user/css/bootstrap.css" rel="stylesheet">
@@ -61,7 +61,7 @@
                                 <div class="image-box">
                                     <figure class="image"><img src="/Public/user/images/gallery/3-1.jpg" alt=""></figure>
                                     <div class="overlay">
-                                        <button href="#"><span class="icon fa fa-shopping-cart"></span>
+                                        <button onclick="addToCart('controller', 'alarm')"><span class="icon fa fa-shopping-cart"></span>
                                         </button></div>
                                 </div>
                                 <div class="lower-content">
@@ -78,9 +78,9 @@
                                 <div class="image-box">
                                     <figure class="image"><img src="/Public/user/images/gallery/3-2.jpg" alt=""></figure>
                                     <!-- <div class=" overlay"><a href="shopping-cart.html">Add to cart</a></div> -->
-                                    <div class="overlay"><a href="#">
-                                        <span class="icon fa fa-shopping-cart"></span>
-                                    </a></div>
+                                    <div class="overlay">
+                                        <button onclick="addToCart('Outdoor', 'alarm')"><span class="icon fa fa-shopping-cart"></span>
+                                        </button></div>
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="#">Outdoor CCTV</a></h4>
@@ -235,6 +235,9 @@
 <script src="/Public/user/js/sticky_sidebar.min.js"></script>
 <script src="/Public/user/js/isotope.js"></script>
 <script src="/Public/user/js/script.js"></script>
+<script src="/Public/user/js/ajax.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 <!-- Mirrored from html.cwsthemes.com/ingenious/portfolio-two-col-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:53:08 GMT -->

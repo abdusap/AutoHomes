@@ -1,4 +1,4 @@
-const { service1, service2, service3 } = require("../../StaticAsset/services")
+const { service1, service2, service3 } = require("../../Utilities/services")
 
 const service= async (req, res) => {
     try{
