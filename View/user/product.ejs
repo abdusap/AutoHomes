@@ -41,7 +41,7 @@
         <div class="auto-container">
             <h1>Products</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index-2.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>Products</li>
             </ul>
         </div>
@@ -55,23 +55,23 @@
                 <!--Content Side-->
                 <div class="content-side col-lg-9 col-md-12 col-sm-12">
                     <div class="row mid-spacing">
-                        <!-- Portfolio Block -->
+                        <%  product.forEach((data)=>{%>
                         <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-1.jpg" alt=""></figure>
+                                    <figure class="image"><img src="/Public/user/images/gallery/<%= data.name%>.jpg" alt=""></figure>
                                     <div class="overlay">
-                                        <button onclick="addToCart('controller', 'alarm')"><span class="icon fa fa-shopping-cart"></span>
+                                        <button onclick="addToCart('<%= data.name %>', '<%= data.category %>')"><span class="icon fa fa-shopping-cart"></span>
                                         </button></div>
                                 </div>
                                 <div class="lower-content">
-                                    <h4><a href="#">Сontroller</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
+                                    <h4><a href="#"><%=data.name %></a></h4>
+                                    <div class="cat"><a href="#"><%=data.category %></a></div>
                                     <!-- <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div> -->
                                 </div>
                             </div>
                         </div>
-
+                        <% })%>
                         <!-- Portfolio Block -->
                         <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
@@ -90,97 +90,18 @@
                             </div>
                         </div>
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-3.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Temperature Controller</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <!-- <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div> -->
-                                </div>
-                            </div>
-                        </div>
+                     
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-4.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Tracking</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div>
-                                </div>
-                            </div>
-                        </div>
+                    
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-5.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Headphones</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div>
-                                </div>
-                            </div>
-                        </div>
+                       
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-6.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Smart Player</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div>
-                                </div>
-                            </div>
-                        </div>
+                   
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-7.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Auto Control</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Portfolio Block -->
-                        <div class="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="/Public/user/images/gallery/3-8.jpg" alt=""></figure>
-                                    <div class="overlay"><a href="#"><span class="icon fa fa-link"></span></a></div>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="#">Strategy</a></h4>
-                                    <div class="cat"><a href="#">Alarm</a></div>
-                                    <div class="text">Potenti justo at, quis neque sem diam nam eu, <br>nulla etiam per magna id</div>
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
-                    <div class="btn-box text-center"><a href="#" class="theme-btn btn-style-three large">Load More</a></div>
+                    <!-- <div class="btn-box text-center"><a href="#" class="theme-btn btn-style-three large">Load More</a></div> -->
                 </div>
                 
                 <!--Sidebar Side-->
@@ -192,12 +113,9 @@
                                 <div class="widget-content">
                                     <h3 class="widget-title">Categories</h3>
                                     <ul class="categories-list">
-                                        <li><a href="#">Alarm     <span>(3)</span></a></li>
-                                        <li><a href="#">Energy Saving <span>(2)</span></a></li>
-                                        <li><a href="#">Heating   <span>(1)</span></a></li>
-                                        <li><a href="#">Lightning <span>(2)</span></a></li>
-                                        <li><a href="#">Music     <span>(5)</span></a></li>
-                                        <li><a href="#">Other     <span>(3)</span></a></li>
+                                        <li><a href="/product?category=Gate Automation">Gate Automation     <span></span></a></li>
+                                        <li><a href="/product?category=Lighting Control">Lighting Control <span></span></a></li>
+                                        <li><a href="/product?category=Home Wifi">Home Wifi  <span></span></a></li>
                                     </ul>
                                 </div>
                             </div>

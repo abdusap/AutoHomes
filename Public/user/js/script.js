@@ -659,42 +659,7 @@
 		});
 	}
 	
-	//Contact Form Validation
-	if($('#email-form').length){
-		$('#submit').click(function(){
-			
-            var o = new Object();
-            var form = '#email-form';
-			
-			var username = $('#email-form .username').val();
-			var email = $('#email-form .email').val();
-			
-			if(username == '' || email == '')
-			{
-				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
-				return false;
-			}
-            
-            $.ajax({
-                url:"sendemail.php",
-                method:"POST",
-                data: $(form).serialize(),
-                beforeSend:function(){
-                    $('#email-form .response').html('<div class="text-info"><img src="images/icons/preloader.gif"> Loading...</div>');
-                },
-                success:function(data){
-                    $('form').trigger("reset");
-                    $('#email-form .response').fadeIn().html(data);
-                    setTimeout(function(){
-                        $('#email-form .response').fadeOut("slow");
-                    }, 5000);
-                },
-                error:function(){
-                    $('#email-form .response').fadeIn().html(data);
-                }
-            });
-        });
-	}
+
 
 	//Subscribe Form
 	if($('#subscribe-form').length){

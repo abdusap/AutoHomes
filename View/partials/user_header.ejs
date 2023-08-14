@@ -31,7 +31,7 @@
 
                              
                                 <li class="dropdown">
-                                    <a href=""><span>Services</span></a>
+                                    <a ><span>Services</span></a>
                                     <ul>
                                         <li><a href="/service?name=Gate Automation">Gate Automation</a></li>
                                         <li><a href="/service?name=Lighting Control">Lighting Control</a></li>
@@ -42,9 +42,9 @@
                                 <li class="dropdown">
                                     <a href="/product"><span>Products</span></a>
                                     <ul>
-                                        <li><a href="portfolio-masonry.html">Gate Automation</a></li>
-                                        <li><a href="portfolio-two-col-sidebar.html">Lighting Control</a></li>
-                                        <li><a href="portfolio-three-col.html">Home Wifi </a></li>
+                                        <li><a href="/product?category=Gate Automation">Gate Automation</a></li>
+                                        <li><a href="/product?category=Lighting Control">Lighting Control</a></li>
+                                        <li><a href="/product?category=Home Wifi">Home Wifi </a></li>
                                     </ul>
                                 </li>
                           
@@ -58,8 +58,15 @@
                        
 
                         <!-- Shoppping Car -->
-                        <div class="cart-btn">
-                            <a href="/cart"><i class="icon flaticon-shopping-cart-empty-side-view"></i> <span class="count">2</span></a>
+                        <div class="cart-btn" id="cart-count">
+                            <a href="/cart"><i class="icon flaticon-shopping-cart-empty-side-view"></i>
+                                <% if(cartCount!=null){ %>
+                                 <span class="count"> <%=cartCount %></span>
+                                 <% } %>
+                                 <% if(cartCount==null){ %>
+                                    <span class="count">0</span>
+                                    <% } %>
+                                </a>
 
                         </div>
                     </div>
@@ -110,7 +117,7 @@
             
             <div class="search-inner">
                 <button class="close-search"><span class="fa fa-times"></span></button>
-                <form method="post" action="http://html.cwsthemes.com/ingenious/blog-showcase.html">
+                <form method="post" action="">
                     <div class="form-group">
                         <input type="search" name="search-field" value="" placeholder="Search..." required="">
                         <button type="submit"><i class="fa fa-search"></i></button>

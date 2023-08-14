@@ -1,16 +1,25 @@
 const cart = require("../../Model/cartModel");
 const generateUniqueId = require("../../Utilities/generateUniqueId");
+const { products } = require("../../Utilities/products");
 
 const product= async (req, res) => {
     try{
-      console.log(req.cookies);
-      const token= generateUniqueId()
-      res.cookie('jwt', token, {
-        httpOnly: true,
-        secure: true, // Only send over HTTPS
-        sameSite: 'strict', // Restrict cookie to same-site requests
-      });
-             res.render('../View/user/product.ejs')
+      let cartCount=null
+      if(req.cookies.userId){
+        let token=req.cookies.userId
+        let userData=await cart.findOne({userId:token})
+        cartCount=userData.cartItem.length
+      }
+      if(req.query?.category){
+        const category=req.query?.category
+       const product=products.filter((data)=>data.category==category)
+       res.render('../View/user/product.ejs',{product,cartCount})
+      }else{
+        let product=products
+        res.render('../View/user/product.ejs',{product,cartCount})
+
+      }
+   
     }catch(error){
       console.log(error);
     }

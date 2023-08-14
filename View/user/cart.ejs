@@ -52,35 +52,36 @@
         <!--Cart Outer-->
         <div class="cart-outer">
             <div class="table-outer">
-                <table class="cart-table">
+                <table class=" cart-table" id="user-cart">
                     <thead class="cart-header">
                         <tr>
                             <th class="product-thumbnail">&nbsp;</th>
                             <th class="product-name">Product</th>
-                            <th class="product-price">Price</th>
+                            <th class="product-price">Category</th>
                             <th class="product-quantity">Quantity</th>
-                            <th class="product-subtotal">Total</th>
+                            <th class="product-subtotal">Action</th>
                             <th class="product-remove">&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <% if(cartData!=null){ %>
+                        <% cartData.cartItem.forEach((data)=>{%>
                         <tr class="cart-item">
-                            <td class="product-thumbnail"><a href="shop-single.html"><img src="/Public/user/images/resource/item-thumb-1.jpg" alt=""></a></td>
-                            <td class="product-name"><a href="shop-single.html">Night Security Cam 2Z1</a></td>
-                            <td class="product-price">$84.00</td> 
-                            <td class="product-quantity"><div class="quantity"><label>Quantity</label><input type="number" class="qty" name="qty" value="1"> </div></td>
-                            <td class="product-subtotal"><span class="amount">$84.00</span></td>
-                            <td class="product-remove"> <a href="#" class="remove"><span class="fa fa-times"></span></a></td>
+                            <td class="product-thumbnail"><a><img src="/Public/user/images/gallery/<%=data.productName%>.jpg" alt=""></a></td>
+                            <td class="product-name"><a><%=data.productName%></a></td>
+                            <td class="product-price"><%=data.category%></td> 
+                            <td class="product-quantity"><div class="quantity"><label>Quantity</label><input readonly type="number" class="qty" name="qty" value="1"> </div></td>
+                            <!-- <td class="product-subtotal"><span class="amount">$84.00</span></td> -->
+                            <td class="product-remove"> <button onclick="deleteItem('<%=data._id%>')" class="remove"><span class="fa fa-times" style="color: red;"></span></button></td>
                         </tr>
-
+                        <% }) %>
+                        <% } %>
+                        <% if(cartData==null || cartData.cartItem.length==0){ %>
                         <tr class="cart-item">
-                            <td class="product-thumbnail"><a href="shop-single.html"><img src="/Public/user/images/resource/item-thumb-2.jpg" alt=""></a></td>
-                            <td class="product-name"><a href="shop-single.html">Day Security Camera B2Z1</a></td>
-                            <td class="product-price">$15.00</td> 
-                            <td class="product-quantity"><div class="quantity"><label>Quantity</label><input type="number" class="qty" name="qty" value="1"> </div></td>
-                            <td class="product-subtotal"><span class="amount">$15.00</span></td>
-                            <td class="product-remove"> <button href="#" class="remove"><span class="fa fa-times" style="color: red;"></span></button></td>
+                            <td class="product-thumbnail"></td>
+                            <td class="product-name">Your Cart is Empty..</a></td>
                         </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div>
@@ -89,7 +90,7 @@
                
 
                 <div class="pull-right">
-                    <button type="button" class="theme-btn cart-btn">update cart</button>
+                 <a href="/cart">  <button type="button" class="theme-btn cart-btn">update cart</button></a> 
                 </div>
             </div>
         </div>
@@ -244,6 +245,12 @@
 <script src="/Public/user/js/sticky_sidebar.min.js"></script>
 <script src="/Public/user/js/isotope.js"></script>
 <script src="/Public/user/js/script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/Public/user/js/ajax.js"></script>
+<!-- Include jQuery library -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 <!-- Mirrored from html.cwsthemes.com/ingenious/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:54:09 GMT -->
