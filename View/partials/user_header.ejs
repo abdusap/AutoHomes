@@ -58,13 +58,13 @@
                        
 
                         <!-- Shoppping Car -->
-                        <div class="cart-btn" id="cart-count">
+                        <div class="cart-btn" id="">
                             <a href="/cart"><i class="icon flaticon-shopping-cart-empty-side-view"></i>
                                 <% if(cartCount!=null){ %>
-                                 <span class="count"> <%=cartCount %></span>
+                                 <span class="count" id="cart-count"> <%=cartCount %></span>
                                  <% } %>
                                  <% if(cartCount==null){ %>
-                                    <span class="count">0</span>
+                                    <span class="count" id="cart-count">0</span>
                                     <% } %>
                                 </a>
 

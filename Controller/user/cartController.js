@@ -22,11 +22,24 @@ const cartPage= async (req, res) => {
    if(req.cookies.userId){
     let id=req.cookies.userId
     let itemId=req.body.id
-      await cart.updateOne({userId:id,'cartItem._id': itemId},{
-        $pull: {
-          cartItem: { _id: itemId }
-        }
-      })
+    const updatedData = await cart.findOneAndUpdate(
+      { userId: id, 'cartItem._id': itemId },
+      {
+          $pull: {
+              cartItem: { _id: itemId }
+          }
+      },
+      { new: true } // This option ensures that the updated document is returned
+  );
+  if(updatedData.cartItem.length==0){
+      res.clearCookie('userId', {
+        path: '/', // Specify the path of the cookie you want to clear
+        secure: true, // Only set if the cookie was originally set with the secure attribute
+        sameSite: 'strict', // Match the sameSite attribute
+        httpOnly: true, // Match the httpOnly attribute
+        expires: new Date(0), // Set the cookie to expire immediately
+      });
+  }
       res.status(200).json({message:'Product Removed Successfully.'})
    }else{
     res.status(400).json({message:'Something went wrong..!'})

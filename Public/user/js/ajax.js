@@ -9,7 +9,7 @@ function addToCart(productName, category) {
     })
     .done((response) => {
       console.log('Success:', response);
-      $("#cart-count").load(location.href + " #cart-count")
+      // $("#cart-count").load(location.href + " #cart-count")
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -17,6 +17,9 @@ function addToCart(productName, category) {
         showConfirmButton: false,
         timer: 1500
       })
+      let count=$('#cart-count').html()
+      count=parseInt(count)+1
+      $('#cart-count').html(count)
       // Handle the success response here
     })
     .fail((error) => {
@@ -43,7 +46,7 @@ function addToCart(productName, category) {
       })
     .done((response) => {
       $("#user-cart").load(location.href + " #user-cart")
-      $("#cart-count").load(location.href + " #cart-count")
+      // $("#cart-count").load(location.href + " #cart-count")
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -51,6 +54,9 @@ function addToCart(productName, category) {
         showConfirmButton: false,
         timer: 1500
       })
+      let count=$('#cart-count').html()
+      count=parseInt(count)-1
+      $('#cart-count').html(count)
       // let subtotal=$('#subtotal_2').html()
       //       subtotal=parseInt(subtotal)+price
       //       $('#subtotal_1').html(subtotal)
@@ -99,14 +105,15 @@ function addToCart(productName, category) {
                 },
                 success:function(data){
                     $('form').trigger("reset");
-                    $('#email-form .response').fadeIn().html(data);
+                    $('#email-form .response').fadeIn().html(data.message).css('color', 'green')
                     setTimeout(function(){
                         $('#email-form .response').fadeOut("slow");
                     }, 5000);
                 },
-                error:function(){
-                    $('#email-form .response').fadeIn().html(data);
+                error: function(jqXHR) {
+                  $('#email-form .response').fadeIn().html(jqXHR.responseJSON.message).css('color', 'red')
                 }
+                
             });
         });
 	}

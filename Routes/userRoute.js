@@ -10,9 +10,8 @@ router.get('/',home)
 router.route('/contact').get(contact).post(contactForm)
 router.get('/service',service)
 router.get('/product',product)
-router.get('/cart',cartPage)
+router.route('/cart').get(cartPage).patch(deleteItem)
 router.patch('/add_to_cart',addToCart)
-router.patch('/cart',deleteItem)
 
 
 module.exports=router
