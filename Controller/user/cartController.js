@@ -8,7 +8,6 @@ const cartPage= async (req, res) => {
         let token=req.cookies.userId
       cartData= await cart.findOne({userId:token})
       cartCount=cartData.cartItem.length
-      console.log(cartCount);
       res.render('../View/user/cart.ejs',{cartData,cartCount})
       }else{
         res.render('../View/user/cart.ejs',{cartData,cartCount})
