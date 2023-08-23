@@ -25,7 +25,6 @@ const contact= async (req, res) => {
   const contactForm= async (req, res) => {
     try{
      if(req.body){
-      console.log(process.env.HOST);
       const {username,email,contact_message }= req.body
       // Create a Nodemailer transporter using the SendinBlue SMTP settings
 const transporter = nodemailer.createTransport({

@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 // const session = require('express-session')
 const path=require('path');
 const userRouter = require('./Routes/userRoute');
+const { errorPage } = require('./Controller/user/homeController');
 // const fileupload=require('express-fileupload')
 // const userRoute=require('./Routes/userRoute')
 // const adminRoute=require('./Routes/adminRoute')
@@ -50,6 +51,7 @@ app.use("/Public", express.static(path.join(__dirname, "Public")));
 
 // For routing to user side
 app.use('/',userRouter)
+app.all("*",errorPage)
 
 // For routing to admin side
 // app.use('/admin',adminRoute)

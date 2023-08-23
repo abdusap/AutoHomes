@@ -8,7 +8,6 @@ function addToCart(productName, category) {
       }
     })
     .done((response) => {
-      console.log('Success:', response);
       // $("#cart-count").load(location.href + " #cart-count")
       Swal.fire({
         position: 'center',
@@ -23,7 +22,6 @@ function addToCart(productName, category) {
       // Handle the success response here
     })
     .fail((error) => {
-      console.error('Error:', error);
       console.log(error.responseJSON.message);
       Swal.fire({
         position: 'center',
@@ -79,10 +77,8 @@ function addToCart(productName, category) {
 			
             var o = new Object();
             var form = '#email-form';
-			
 			var username = $('#email-form .username').val();
 			var email = $('#email-form .email').val();
-			
 			if(username == '' || email == '')
 			{
 				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
@@ -117,3 +113,66 @@ function addToCart(productName, category) {
             });
         });
 	}
+
+
+
+	// //Contact Form Validation
+  if($('#cart-form').length){
+    $('#cart-detail-button').off('click'); 
+  // $(document).ready(function() {
+    $('#cart-detail-button').click(function(e) {
+      // $('#cart-form').prop('disabled', true)
+      e.preventDefault();
+            var o = new Object();
+            var form = '#cart-form';
+			var username = $('#cart-name').val();
+			var email = $('#cart-email').val();
+			var mobile = $('#cart-mobile').val();
+			if(username == '' || email == '' || mobile == '')
+			{
+				$('#cart-message').html('Please fill the required fields.').css('color', 'red')
+				return false;
+			}
+
+        // Email validation using a regular expression
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            $('#cart-message').html('Invalid email format.').css('color', 'red')
+            return false;
+        }
+            
+            $.ajax({
+                url:"/cart",
+                method:"POST",
+                data: $(form).serialize(),
+                beforeSend:function(){
+                    $('#cart-message').html('<div class="text-info"><img style="height:33px" src="/Public/user/images/icons/loader.gif"> Loading...</div>');
+                },
+                success:function(data){
+                    // $('form').trigger("reset");
+                    // $('#cart-message').fadeIn().html(data.message).css('color', 'green')
+                    // setTimeout(function(){
+                    //     $('#email-form .response').fadeOut("slow");
+                    // }, 5000);
+                    if(data.success){
+
+                      Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: "We will Contact You Shortly",
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      
+                      window.location='/'
+                    }
+                   
+                },
+                error: function(jqXHR) {
+                  $('#cart-message').fadeIn().html(jqXHR.responseJSON.message).css('color', 'red')
+                }
+                
+            });
+        });
+	}
+

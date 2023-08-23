@@ -1,6 +1,6 @@
 const cart = require("../../Model/cartModel")
 
-const home= async (req, res) => {
+const home= async (req, res,next) => {
     try{
       let cartCount=null
       if(req.cookies.userId){
@@ -13,14 +13,23 @@ const home= async (req, res) => {
         res.render('../View/user/home.ejs',{cartCount})
 
       }
-      console.log(req.cookies);
     }catch(error){
       console.log(error);
+      next(error)
     }
   }
 
 
+const errorPage= async (req, res) => {
+try{
+  res.render('../View/user/error.ejs')
+
+}catch(err){
+  console.log(err);
+}
+  }
 
   module.exports = {
     home,
+    errorPage
   }

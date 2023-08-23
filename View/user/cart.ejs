@@ -108,7 +108,7 @@
 
           <!--Checkout Details-->
           <div class="checkout-form">
-            <form method="post" action="http://html.cwsthemes.com/ingenious/checkout.html">
+            <form method="post" action="" class="cart-form" id="cart-form">
                 <div class="row clearfix">
                     <!--Column-->
                     <div class="column col-lg-6 col-md-12 col-sm-12">
@@ -116,23 +116,26 @@
                             <div class="sec-title">
                                 <h3>Details</h3>
                             </div>
-
+                            <!-- <div class="form-group mb-0">
+                                <div class="response"></div>
+                            </div> -->
+                            <p id="cart-message" ></p>
                             <!--Form Group-->
                             <div class="form-group">
                                 <div class="field-label">Name <sup>*</sup></div>
-                                <input type="text" name="field-name" value="" placeholder="Name">
+                                <input type="text" name="name" value="" placeholder="Name" id="cart-name">
                             </div>
                             
                             <!--Form Group-->
                             <div class="form-group">
                                 <div class="field-label">Email <sup>*</sup></div>
-                                <input type="email" name="field-name" value="" placeholder="Email">
+                                <input type="email" name="email" value="" placeholder="Email" id="cart-email">
                             </div>
                             
                             <!--Form Group-->
                             <div class="form-group">
                                 <div class="field-label">Mobile <sup>*</sup></div>
-                                <input type="number" name="field-name" value="" placeholder="Mobile">
+                                <input type="number" name="mobile" value="" placeholder="Mobile" id="cart-mobile">
                             </div>
                             
                             <!--Form Group-->
@@ -200,13 +203,21 @@
                                 <div class="field-label">Fill and submit the form </div>
                                 <textarea class="" readonly placeholder="We will contact as per your estimated product and service." ></textarea>
                             </div>
+                            <!-- <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                <label>Message</label>
+                                <textarea name="contact_message" style="height: 500px;"></textarea>
+                            </div> -->
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea  name="contact_message"></textarea>
+                            </div>
                         </div>
                             <div class="column col-lg-4 offset-lg-8 col-md-6 col-sm-12">
                                 <!-- <ul class="totals-table"> -->
                                     <!-- <li><h3>Cart Totals</h3></li> -->
                                     <!-- <li class="clearfix"><span class="col">Subtotal</span><span class="col price">$186.00</span></li> -->
                                     <!-- <li class="clearfix"><span class="col">Total</span><span class="col total-price">$186.00</span></li> -->
-                                    <li class="text-right"><button type="submit" class="theme-btn proceed-btn">Send</button></li>
+                                    <li class="text-right"><button type="button" id="cart-detail-button" class="theme-btn proceed-btn">Send</button></li>
                                 </ul>
                             </div> 
                             <!--Form Group-->
@@ -251,6 +262,9 @@
 <!-- Include jQuery library -->
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="/Public/user/js/ajax.js"></script>
+
 </body>
 
 <!-- Mirrored from html.cwsthemes.com/ingenious/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2023 03:54:09 GMT -->
