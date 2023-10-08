@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 // Port specified
-const port= process.env.PORT
+const port= process.env.LOCAL_PORT
 
 
 //  Setting view Engine
