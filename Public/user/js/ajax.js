@@ -79,7 +79,7 @@ function addToCart(productName, category) {
             var form = '#email-form';
 			var username = $('#email-form .username').val();
 			var email = $('#email-form .email').val();
-			if(username == '' || email == '')
+      			if(username == '' || email == '')
 			{
 				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
 				return false;
@@ -140,6 +140,12 @@ function addToCart(productName, category) {
             $('#cart-message').html('Invalid email format.').css('color', 'red')
             return false;
         }
+            // Mobile number validation using a regular expression
+    var mobilePattern = /^[0-9]{10}$/; // Assuming a 10-digit mobile number
+    if (!mobilePattern.test(mobile)) {
+      $('#cart-message').html('Invalid mobile number format.').css('color', 'red');
+      return false;
+    }
             
             $.ajax({
                 url:"/cart",
