@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const cart = require("../../Model/cartModel")
+require('dotenv').config()
 
 const contact= async (req, res) => {
     try{
