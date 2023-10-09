@@ -29,13 +29,18 @@ const contact= async (req, res) => {
       const {username,email,contact_message }= req.body
       // Create a Nodemailer transporter using the SendinBlue SMTP settings
 const transporter = nodemailer.createTransport({
-  host: process.env.HOST, // Replace with SendinBlue SMTP host
-  port: 465,                         // SMTP port
-  secure: true,                     // Use TLS
+  host: "smtp-relay.brevo.com", // Replace with SendinBlue SMTP host
+  // host: process.env.HOST, // Replace with SendinBlue SMTP host
+  port: 587,                         // SMTP port
+  secure: false,                     // Use TLS
   auth: {
-    user: process.env.USER,            // SMTP username
-    pass: process.env.PASSWORD             // SMTP password or API key
+    user: "sapabdu@gmail.com",            // SMTP username
+    pass: "Vdc5yHpQLzBNYJsf"             // SMTP password or API key
   }
+  // auth: {
+  //   user: process.env.USER,            // SMTP username
+  //   pass: process.env.PASSWORD             // SMTP password or API key
+  // }
 });
 
 // Create email data
