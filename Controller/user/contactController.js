@@ -30,8 +30,8 @@ const contact= async (req, res) => {
       // Create a Nodemailer transporter using the SendinBlue SMTP settings
 const transporter = nodemailer.createTransport({
   host: process.env.HOST, // Replace with SendinBlue SMTP host
-  port: 587,                         // SMTP port
-  secure: false,                     // Use TLS
+  port: 465,                         // SMTP port
+  secure: true,                     // Use TLS
   auth: {
     user: process.env.USER,            // SMTP username
     pass: process.env.PASSWORD             // SMTP password or API key
